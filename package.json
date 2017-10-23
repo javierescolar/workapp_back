@@ -1,0 +1,16 @@
+{
+  "name": "back",
+  "version": "0.0.1",
+  "description": "Aplicacion workapp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Javier Escolar Salcedo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.12.4",
+    "nodemon": "^1.12.1"
+  }
+}

@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+const methodOverride = require("method-override");
 var router_app = require("./routes");
 
-
-// Connect to the db
+app.use(bodyParser.json());//peticiones JSON
+app.use(bodyParser.urlencoded({extened: true}));
+app.use(methodOverride("_method"));
 app.use(router_app);
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('app listening on port 3000!');
 });

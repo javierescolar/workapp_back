@@ -1,16 +1,16 @@
 const express = require("express");
 var router = express.Router();
-var TypesTraining = require("./models/TypesTraining").TypesTraining;
+// Require controller modules
+var types_training_controller = require('./controllers/TypesTrainingController');
 
 
-router.get('/', (req, res) => {
-  TypesTraining.find({}, function(err, types_training) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(types_training);
-    }
-  });
-});
+router.route('/types_training')
+  .get(types_training_controller.index)
+  .post(types_training_controller.store);
+
+router.route('/types_training/:id')
+  .put(types_training_controller.update)
+  .delete(types_training_controller.destroy);
+
 
 module.exports = router;

@@ -9,6 +9,7 @@ router.route('/types_training')
   .post(types_training_controller.store);
 
 router.route('/types_training/:id')
+  .get(types_training_controller.show)
   .put(types_training_controller.update)
   .delete(types_training_controller.destroy);
 

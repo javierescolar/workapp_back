@@ -10,6 +10,16 @@ exports.index = function(req,res) {
   });
 }
 
+exports.show = function(req,res) {
+  TypesTraining.findById(req.params.id, function(err, types_training) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(types_training);
+    }
+  });
+}
+
 exports.store = function(req,res) {
   var data = {
     name:req.body.name,

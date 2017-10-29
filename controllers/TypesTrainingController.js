@@ -10,7 +10,7 @@ exports.index = function(req,res) {
   });
 }
 
-exports.show = function(req,res) {
+exports.edit = function(req,res) {
   TypesTraining.findById(req.params.id, function(err, types_training) {
     if (err) {
       res.status(500).send(err);
